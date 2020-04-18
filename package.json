@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "npm run dev"
+    "start": "serve"
   },
   "keywords": [
     "mailto",
@@ -40,6 +40,7 @@
     "rollup": "^2.6.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "serve": "latest"
   }
 }
