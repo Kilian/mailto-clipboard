@@ -1,8 +1,8 @@
 {
-  "name": "mailtoclipboard",
+  "name": "mailto-clipboard",
   "version": "1.0.0",
   "description": "convert all mailto links to copy-to-clipboard links",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "scripts": {
@@ -16,7 +16,18 @@
   "files": [
     "dist"
   ],
-  "author": "Kilian Valkhof",
+  "homepage": "https://github.com/kilian/mailto-clipboard",
+  "author": {
+    "name": "Kilian Valkhof",
+    "url": "http://kilianvalkhof.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kilian/mailto-clipboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kilian/mailto-clipboard/issues"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
