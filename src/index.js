@@ -34,11 +34,11 @@ const clickHandler = e => {
 
     if (config.confirmationTimeout) {
       setTimeout(() => {
-        hideTooltip();
+        hideTooltip(e.target);
       }, config.confirmationTimeout);
     }
   } else if (config.showTooltip) {
-    hideTooltip();
+    hideTooltip(e.target);
   }
 };
 

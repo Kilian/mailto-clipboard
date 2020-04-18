@@ -83,11 +83,11 @@ export const showTooltip = (el, email, bounds, text) => {
     Tooltip.style.top = `${bounds.top + bounds.height + 5}px`;
   }
 
-  Tooltip.classList.add('MailtoClipboard-tooltip__active');
+  Tooltip.classList.add('MailtoClipboard-tooltip-active');
 };
 
 export const hideTooltip = el => {
-  Tooltip.classList.remove('MailtoClipboard-tooltip__active');
+  Tooltip.classList.remove('MailtoClipboard-tooltip-active');
 
   el.setAttribute('title', el.dataset.title);
   delete el.dataset.title;
@@ -95,5 +95,5 @@ export const hideTooltip = el => {
 
 export const showConfirmation = (email, text) => {
   Tooltip.innerHTML = text.replace('{email}', email);
-  Tooltip.classList.add('MailtoClipboard-confirmation__active');
+  Tooltip.classList.add('MailtoClipboard-confirmation-active');
 };
