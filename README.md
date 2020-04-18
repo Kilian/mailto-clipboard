@@ -8,7 +8,7 @@
 
 ---
 
-# mailto-clipboard [![npm](https://img.shields.io/npm/v/mailto-clipboard.svg)](https://www.npmjs.com/package/mailto-clipboard) [![npm-downloads](https://img.shields.io/npm/dm/mailto-clipboard.svg)](https://www.npmjs.com/package/mailto-clipboard) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Femailto-clipboard.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard?ref=badge_shield)
+# mailto-clipboard [![npm](https://img.shields.io/npm/v/mailto-clipboard.svg)](https://www.npmjs.com/package/mailto-clipboard) [![npm-downloads](https://img.shields.io/npm/dm/mailto-clipboard.svg)](https://www.npmjs.com/package/mailto-clipboard)
 
 Automatically rewrites all mailto: links on a page to copy the email address on click.
 
@@ -118,5 +118,3 @@ To style the tooltip, use these classes:
 ## License
 
 mailto-clipboard is ISC licensed.
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard?ref=badge_large)
