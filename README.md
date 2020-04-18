@@ -119,4 +119,4 @@ To style the tooltip, use these classes:
 
 mailto-clipboard is ISC licensed.
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Felectron-create-menu.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Fmailto-clipboard?ref=badge_large)
