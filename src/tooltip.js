@@ -39,7 +39,7 @@ const defaultStyles = `
     top:-10px;
   }
 
-  .MailtoClipboard-tooltip__active {
+  .MailtoClipboard-tooltip-active {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }

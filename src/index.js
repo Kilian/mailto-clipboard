@@ -37,6 +37,8 @@ const clickHandler = e => {
         hideTooltip();
       }, config.confirmationTimeout);
     }
+  } else if (config.showTooltip) {
+    hideTooltip();
   }
 };
 
