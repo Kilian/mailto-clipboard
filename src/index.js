@@ -43,7 +43,7 @@ const clickHandler = e => {
 };
 
 const MailtoClipboard = (opts = {}) => {
-  config = { ...config, opts };
+  config = { ...config, ...opts };
 
   setupTooltips(config);
 
