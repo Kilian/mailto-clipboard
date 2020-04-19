@@ -53,13 +53,17 @@ const injectCSS = () => {
 
 let Tooltip;
 
+export const removeTooltip = () => {
+  const previousTooltip = document.querySelector('.MailtoClipboard');
+  previousTooltip && previousTooltip.remove();
+};
+
 export const setupTooltips = config => {
   if (config.defaultStyle && (config.showTooltip || config.showConfirmation)) {
     injectCSS();
   }
 
-  const previousTooltip = document.querySelector('.MailtoClipboard');
-  previousTooltip && previousTooltip.remove();
+  removeTooltip();
 
   if (config.showTooltip || config.showConfirmation) {
     Tooltip = document.createElement('span');

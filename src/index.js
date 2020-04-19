@@ -1,4 +1,4 @@
-import { setupTooltips, showTooltip, hideTooltip, showConfirmation } from './tooltip';
+import { setupTooltips, showTooltip, hideTooltip, removeTooltip, showConfirmation } from './tooltip';
 import copyToClipboard from './copyToClipboard';
 import { getBounds, getEmail } from './helpers';
 
@@ -14,13 +14,17 @@ let config = {
 };
 
 const mouseoverHandler = e => {
-  const bounds = getBounds(e.target);
-  const email = getEmail(e.target);
-  showTooltip(e.target, email, bounds, config.tooltipText);
+  if (config.showTooltip) {
+    const bounds = getBounds(e.target);
+    const email = getEmail(e.target);
+    showTooltip(e.target, email, bounds, config.tooltipText);
+  }
 };
 
 const mouseoutHandler = e => {
-  hideTooltip(e.target);
+  if (config.showTooltip) {
+    hideTooltip(e.target);
+  }
 };
 
 const clickHandler = e => {
@@ -42,6 +46,23 @@ const clickHandler = e => {
   }
 };
 
+const destroy = () => {
+  removeTooltip();
+
+  const emails = Array.from(document.querySelectorAll(`a[href^="mailto:"]`));
+  emails.forEach(el => {
+    if (el.dataset.MailtoClipboardApplied) {
+      el.removeEventListener('mouseover', mouseoverHandler);
+      el.removeEventListener('mouseout', mouseoutHandler);
+      el.removeEventListener('click', clickHandler);
+      el.setAttribute('title', el.dataset.originalTitle || "");
+
+      delete el.dataset.MailtoClipboardApplied;
+      delete el.dataset.originalTitle;
+    }
+  });
+};
+
 const MailtoClipboard = (opts = {}) => {
   config = { ...config, ...opts };
 
@@ -50,17 +71,22 @@ const MailtoClipboard = (opts = {}) => {
   const emails = Array.from(document.querySelectorAll(`a[href^="mailto:"]`));
   emails.forEach(el => {
     if (!el.dataset.MailtoClipboardApplied) {
-      el.dataset.MailtoClipboardApplied = true;
       const email = getEmail(el);
-      el.setAttribute('title', config.tooltipText.replace('{email}', email));
 
-      if (config.showTooltip) {
-        el.addEventListener('mouseover', mouseoverHandler);
-        el.addEventListener('mouseout', mouseoutHandler);
+      if (el.getAttribute('title')) {
+        el.dataset.originalTitle = el.getAttribute('title');
       }
+
+      el.setAttribute('title', config.tooltipText.replace('{email}', email));
+      el.addEventListener('mouseover', mouseoverHandler);
+      el.addEventListener('mouseout', mouseoutHandler);
       el.addEventListener('click', clickHandler);
+
+      el.dataset.MailtoClipboardApplied = true;
     }
   });
 };
+
+MailtoClipboard.destroy = destroy;
 
 export default MailtoClipboard;
