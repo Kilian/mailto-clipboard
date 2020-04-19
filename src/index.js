@@ -49,14 +49,17 @@ const MailtoClipboard = (opts = {}) => {
 
   const emails = Array.from(document.querySelectorAll(`a[href^="mailto:"]`));
   emails.forEach(el => {
-    const email = getEmail(el);
-    el.setAttribute('title', config.tooltipText.replace('{email}', email));
+    if (!el.dataset.MailtoClipboardApplied) {
+      el.dataset.MailtoClipboardApplied = true;
+      const email = getEmail(el);
+      el.setAttribute('title', config.tooltipText.replace('{email}', email));
 
-    if (config.showTooltip) {
-      el.addEventListener('mouseover', mouseoverHandler);
-      el.addEventListener('mouseout', mouseoutHandler);
+      if (config.showTooltip) {
+        el.addEventListener('mouseover', mouseoverHandler);
+        el.addEventListener('mouseout', mouseoutHandler);
+      }
+      el.addEventListener('click', clickHandler);
     }
-    el.addEventListener('click', clickHandler);
   });
 };
 

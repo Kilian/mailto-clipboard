@@ -61,6 +61,10 @@ Browser as global variable
   MailtoClipboard();
 </script>
 ```
+### re-applying when the page content changed
+To re-apply when the page content has changed, call `MailtoClipboard()` again. Any options you pass will be updated, the
+rest of the options will be preserved from the previous invocation.
+
 
 ## Configuration
 

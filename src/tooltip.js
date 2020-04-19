@@ -58,6 +58,9 @@ export const setupTooltips = config => {
     injectCSS();
   }
 
+  const previousTooltip = document.querySelector('.MailtoClipboard');
+  previousTooltip && previousTooltip.remove();
+
   if (config.showTooltip || config.showConfirmation) {
     Tooltip = document.createElement('span');
     Tooltip.classList.add(
