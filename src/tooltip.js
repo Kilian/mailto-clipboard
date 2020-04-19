@@ -54,7 +54,7 @@ const injectCSS = () => {
 let Tooltip;
 
 export const setupTooltips = config => {
-  if (config.defaultStyle) {
+  if (config.defaultStyle && (config.showTooltip || config.showConfirmation)) {
     injectCSS();
   }
 
