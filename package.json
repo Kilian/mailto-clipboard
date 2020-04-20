@@ -8,6 +8,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "prepublish": "yarn build",
     "start": "serve"
   },
   "keywords": [
