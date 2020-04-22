@@ -14,6 +14,13 @@ Automatically rewrites all mailto: links on a page to copy the email address on 
 
 Inspired by [I hate mailto](https://ihatemailto.com/) (**which you should BUY**) by [@tkmadeit](https://twitter.com/tkmadeit) and made with his blessing.
 
+## Online Demo
+Go to [CodeSandbox](https://githubbox.com/Kilian/mailto-clipboard) to show the demo.
+
+## Run Demo
+Clone the repository and run `yarn start` to start the demo server, then open http://localhost:5000/
+
+
 ## Installation
 
 Install using `npm install mailto-clipboard`.
@@ -28,6 +35,10 @@ yarn build
 ```
 
 and the builds will be in the `dist` folder.
+
+## Run Demo
+Clone the repository and run `yarn start` to start the demo server, then open http://localhost:5000/
+
 
 ## Usage
 

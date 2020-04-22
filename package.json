@@ -7,10 +7,10 @@
   "browser": "dist/index.umd.js",
   "scripts": {
     "build": "rollup -c",
-    "live": "rollup -c -w",
+    "dev": "rollup -c -w",
     "prepublish": "yarn build",
-    "predev": "yarn build",
-    "dev": "serve"
+    "prestart": "yarn build && cp -r dist/ demo/",
+    "start": "serve demo"
   },
   "keywords": [
     "mailto",
